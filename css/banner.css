@@ -517,3 +517,179 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.yys_lh_viod {
+  height: 215px;
+  padding-bottom: 47px;
+}
+.yys_lh_viod .yys_lh_viod_logo {
+  background: url(../img/yys_lh_jlt.png);
+  background-position: -916px -297px;
+  width: 55px;
+  height: 146px;
+  float: left;
+  margin-right: 35px;
+  background-repeat: no-repeat;
+}
+.yys_lh_viod .yys_lh_void_box {
+  float: left;
+  width: 1090px;
+  height: 215px;
+  background: url(../img/yys_lh_shiting_bg.jpg) left 70px no-repeat;
+}
+.yys_lh_viod .yys_lh_void_box .yys_lh_void_ul {
+  height: 141px;
+}
+.yys_lh_viod .yys_lh_void_box .yys_lh_void_ul li {
+  width: 250px;
+  height: 141px;
+  margin-left: 20px;
+  position: relative;
+  float: left;
+}
+.yys_lh_viod .yys_lh_void_box .yys_lh_void_ul li:first-child {
+  margin-left: 30px;
+}
+.yys_lh_viod .yys_lh_void_box .yys_lh_void_ul li:hover .yys_lh_st_name > i {
+  background: url(../img/yys_lh_au_h.png) no-repeat;
+}
+.yys_lh_viod .yys_lh_void_box .yys_lh_void_ul .yys_lh_st_name {
+  font-size: 16px;
+  background: #000;
+  padding: 5px 10px;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+}
+.yys_lh_viod .yys_lh_void_box .yys_lh_void_ul .yys_lh_st_name i {
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  background: url(../img/yys_lh_au.png) no-repeat;
+  margin-right: 5px;
+  transition: all .3s ease;
+}
+.yys_lh_st_btn {
+  width: 210px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #c2a060;
+  font-size: 14px;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #c2a060;
+  margin-top: 30px;
+}
+.yys_lh_st_btn::before,
+.yys_lh_st_btn::after {
+  content: '';
+  position: absolute;
+  background: #e0cfaf;
+}
+.yys_lh_st_btn::before {
+  width: 1px;
+  height: 41px;
+  top: 2px;
+  right: -3px;
+}
+.yys_lh_st_btn::after {
+  width: 213px;
+  height: 1px;
+  left: 0;
+  bottom: -3px;
+}
+.yys_lh_st_btn:hover i {
+  animation: snake 1s ease;
+}
+.yys_lh_st_btn i {
+  width: 41px;
+  height: 5px;
+  display: inline-block;
+  margin-left: 20px;
+  background: url(../img/yys_lh_arrow_s.png) no-repeat;
+}
+.yys_lh_fYu {
+  margin-bottom: 70px;
+  height: 516px;
+  background: url(../img/yys_lh_fYu_bg.jpg) left 175px no-repeat;
+}
+.yys_lh_fYu .yys_lh_fYu_tit_box {
+  width: 120px;
+  float: left;
+}
+.yys_lh_fYu .yys_lh_fYu_tit {
+  background: url(../img/yys_lh_jlt.png);
+  background-position: -1107px -297px;
+  display: block;
+  width: 55px;
+  height: 140px;
+  background-repeat: no-repeat;
+}
+.yys_lh_fYu .yyd_lh_fYu_box {
+  width: 1060px;
+  height: 516px;
+  float: left;
+  position: relative;
+}
+.yys_lh_fYu .yyd_lh_fYu_box .yys_lh_fun_con {
+  width: 1060px;
+  height: 536px;
+  position: relative;
+  overflow: hidden;
+}
+.yys_lh_fYu .yyd_lh_fYu_box .yys_lh_fun_con .yys_lh_fun_ul {
+  position: absolute;
+  width: 1380px;
+  left: 0;
+  top: 20px;
+  height: 516px;
+}
+.yys_lh_fYu .yyd_lh_fYu_box .yys_lh_fun_con .yys_lh_fun_ul li {
+  float: left;
+  width: 220px;
+  height: 516px;
+  margin-right: 10px;
+  transition: all .4s ease;
+}
+.yys_lh_fYu .yyd_lh_fYu_box .yys_lh_fun_con .yys_lh_fun_ul li:hover {
+  transform: translateY(-20px);
+}
+.yys_lh_fun_btn_left,
+.yys_lh_fun_btn_right {
+  display: block;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: #fff;
+  border: 1px solid #c2a060;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  z-index: 99;
+}
+.yys_lh_fun_btn_left:hover i,
+.yys_lh_fun_btn_right:hover i {
+  animation: snake 1s ease;
+}
+.yys_lh_fun_btn_left i,
+.yys_lh_fun_btn_right i {
+  background: url(../img/yys_lh_fan_arrow.png) no-repeat;
+  width: 47px;
+  height: 9px;
+  display: block;
+  margin: 32px auto 0;
+  transition: all .3s ease;
+}
+.yys_lh_fun_btn_left {
+  left: -36px;
+  display: none;
+}
+.yys_lh_fun_btn_right {
+  right: -36px;
+}
+.yys_lh_fun_btn_right i {
+  background: url(../img/yys_lh_arrow4.png) no-repeat;
+}
