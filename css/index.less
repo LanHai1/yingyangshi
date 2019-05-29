@@ -41,9 +41,32 @@
     }
 }
 
+// 京都商业动画
+@keyframes jdMore {
+    0% {
+        opacity: 0.003;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.003;
+    }
+}
+
 body {
     overflow-x: hidden;
 }
+// 隐藏页面滚动条
+body{-ms-overflow-style:none;}
+body::-webkit-scrollBar{display:none;}
+body::-ms-scrollBar{display:none;}
+body:-ms-scrollBar{display:none;}
+body::-o-scrollBar{display:none;}
+body::scrollBar{display:none;}
+body:scrollBar{display:none;}
 
 .yys_lh_nav {
     width: 100%;
@@ -662,11 +685,12 @@ body {
                     margin-left: 0;
                     overflow: hidden;
 
-                    &:hover .yys_lh_geme_s_line i{
+                    &:hover .yys_lh_geme_s_line i {
                         width: 4px;
                         background-color: #93c4b0;
                     }
-                    &:hover .yys_lh_geme_s_con p{
+
+                    &:hover .yys_lh_geme_s_con p {
                         color: #93c4b0;
                     }
 
@@ -712,4 +736,3 @@ body {
         }
     }
 }
-

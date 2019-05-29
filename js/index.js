@@ -1,7 +1,7 @@
 // 禁用shu向滚动条
 // document.querySelector(".yys_lh_banner_main").parentNode.style.overflowY = "hidden";
 // 导航效果
-let yys_lh_dh = $(".yys_lh_nav_con>ul>li");
+let yys_lh_dh = fJquery(".yys_lh_nav_con>ul>li");
 
 for (let i = 0; i < yys_lh_dh.length; i++) {
 
@@ -17,8 +17,8 @@ for (let i = 0; i < yys_lh_dh.length; i++) {
 }
 
 // 新闻资讯轮播
-let newsUl = $(".yys_lh_new_box>ul>li");
-let newsUl_Box = $(".yys_lh_new_box>ul")[0];
+let newsUl = fJquery(".yys_lh_new_box>ul>li");
+let newsUl_Box = fJquery(".yys_lh_new_box>ul")[0];
 
 for (let i = 0; i < newsUl.length; i++) {
     newsUl[i].setAttribute("index", i + 1);
@@ -26,8 +26,8 @@ for (let i = 0; i < newsUl.length; i++) {
 
 
 // 上一节下一节
-let nextPage = $(".n_next_btn")[0];
-let lastPage = $(".n_prev_btn")[0];
+let nextPage = fJquery(".n_next_btn")[0];
+let lastPage = fJquery(".n_prev_btn")[0];
 
 let zMarginL = 0;
 let newsUl_Index = 0;
@@ -95,9 +95,9 @@ nextPage.onclick = function() {
 }
 
 // 平安世界切换
-let left_world = $(".yys_lh_jt")[0];
-let right_world = $(".yys_lh_jt")[1];
-let worldUl = $(".yys_lh_bigImg_item");
+let left_world = fJquery(".yys_lh_jt")[0];
+let right_world = fJquery(".yys_lh_jt")[1];
+let worldUl = fJquery(".yys_lh_bigImg_item");
 
 // 平安世界文字
 let left_world_p = document.querySelector(".yys_lh_bigImg_btn_left p")
@@ -227,8 +227,8 @@ left_world.onclick = function() {
 
 // 游戏攻略tab切换
 
-let gemaTab_top = $(".yys_lh_mx>li");
-let gemaTab_con = $(".yys_lh_game_bottom>.yys_lh_geme_sta_con")
+let gemaTab_top = fJquery(".yys_lh_mx>li");
+let gemaTab_con = fJquery(".yys_lh_game_bottom>.yys_lh_geme_sta_con")
 for (let i = 0; i < gemaTab_top.length; i++) {
     gemaTab_top[i].setAttribute("index", i);
     gemaTab_con[i].setAttribute("index", i);
@@ -278,8 +278,8 @@ for (let i = 0; i < gemaTab_top.length; i++) {
 }
 
 // 同人手账轮播
-let tren_con_span = $(".yys_lh_ban_num_con>span");
-let tren_con_img = $(".yys_lh_tr_ban_img>a");
+let tren_con_span = fJquery(".yys_lh_ban_num_con>span");
+let tren_con_img = fJquery(".yys_lh_tr_ban_img>a");
 let tren_con_Index = 0;
 let timeId_toren;
 
@@ -344,3 +344,79 @@ timeId_toren = setInterval(() => {
     }
     trenTab(tren_con_Index)
 }, 3000)
+
+// 泛娱乐
+let fyu_ul = fJquery(".yys_lh_fun_ul")[0];
+let fyu_ul_li_w = fyu_ul.children[0].offsetWidth;
+let fyu_a_left = fJquery(".yys_lh_fun_btn_left")[0];
+let fyu_a_right = fJquery(".yys_lh_fun_btn_right")[0];
+let fyu_index = 0;
+let fyu_margin_r = 0; // +10
+fyu_a_right.onclick = function() {
+    ++fyu_index;
+    fyu_margin_r += 10;
+    if (fyu_index != 0) {
+        fyu_a_left.style.display = "block";
+    }
+    if (fyu_index == 2) {
+        fyu_a_right.style.display = "none";
+    } else {
+        fyu_a_right.style.display = "block";
+    }
+    animation_s(fyu_ul, {
+        left: -(fyu_index * fyu_ul_li_w + fyu_margin_r)
+    })
+}
+
+fyu_a_left.onclick = function() {
+    --fyu_index;
+    fyu_margin_r -= 10;
+    if (fyu_index == 0) {
+        fyu_a_left.style.display = "none";
+    }
+    if (fyu_index == 2) {
+        fyu_a_right.style.display = "none";
+    } else {
+        fyu_a_right.style.display = "block";
+    }
+    animation_s(fyu_ul, {
+        left: -(fyu_index * fyu_ul_li_w + fyu_margin_r)
+    })
+}
+
+// 京都拖拉
+let moveElem = document.querySelector('.yys_lh_jd_td_box'); //待拖拽元素 
+let moveTdElem = document.querySelector(".yys_lh_jd_td");
+let movdMax_l = moveTdElem.offsetWidth - moveElem.offsetWidth;
+let bliMoveJd = document.querySelector(".yys_lh_jdSh_ul").offsetWidth / moveTdElem.offsetWidth;
+
+
+let dragging; //是否激活拖拽状态
+let tLeft; //鼠标按下时相对于选中元素的位移
+
+//监听鼠标按下事件
+document.addEventListener('mousedown', function(e) {
+    if (e.target == moveElem) {
+        dragging = true; //激活拖拽状态
+        var moveElemRect = moveElem.getBoundingClientRect();
+        tLeft = e.clientX - moveElemRect.left; //鼠标按下时和选中元素的坐标偏移:x坐标
+    }
+});
+
+document.addEventListener('mouseup', function(e) {
+    dragging = false;
+});
+
+document.addEventListener('mousemove', function(e) {
+    if (dragging) {
+        var moveX = e.clientX - tLeft - moveElem.offsetWidth - 95;
+        if (moveX < 0) {
+            moveX = 0;
+        }
+        if (moveX > movdMax_l) {
+            moveX = movdMax_l;
+        }
+        document.querySelector(".yys_lh_jdSh_ul").style.left = -moveX * bliMoveJd + "px";
+        moveElem.style.left = moveX + 'px';
+    }
+});

@@ -31,8 +31,40 @@
     transform: translate3d(-3px, 0, 0);
   }
 }
+@keyframes jdMore {
+  0% {
+    opacity: 0.003;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.003;
+  }
+}
 body {
   overflow-x: hidden;
+}
+body {
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollBar {
+  display: none;
+}
+body::-ms-scrollBar {
+  display: none;
+}
+body:-ms-scrollBar {
+  display: none;
+}
+body::-o-scrollBar {
+  display: none;
+}
+body::scrollBar {
+  display: none;
+}
+body:scrollBar {
+  display: none;
 }
 .yys_lh_nav {
   width: 100%;

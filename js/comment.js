@@ -2,9 +2,8 @@
  * 获取元素
  * @param {*} value 
  */
-let $ = (value) => {
+let fJquery = (value) => {
     let res = null;
-
     if (/>/.test(value)) {
         let arr = value.split(/>|\s/);
         let res1 = "document";
@@ -23,7 +22,6 @@ let $ = (value) => {
                     break;
             }
         }
-
         /\[0]$/.test(res1) ? res1 = res1.substring(0, res1.length - 3) : "";
         return eval(res1);
     }
